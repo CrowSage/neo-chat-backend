@@ -1,0 +1,114 @@
+Traceback (most recent call last):
+  File "/app/.venv/bin/daphne", line 7, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/daphne/cli.py", line 171, in entrypoint
+    cls().run(sys.argv[1:])
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+    ~~~~~~~~~^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/daphne/cli.py", line 239, in run
+    application = self.load_asgi_app(args.application)
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "/app/.venv/lib/python3.13/site-packages/daphne/cli.py", line 208, in load_asgi_app
+    return import_by_path(asgi_app_path)
+  File "/app/.venv/lib/python3.13/site-packages/daphne/utils.py", line 17, in import_by_path
+    target = importlib.import_module(module_path)
+  File "/mise/installs/python/3.13.12/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "<frozen importlib._bootstrap_external>", line 1023, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/backend/asgi.py", line 4, in <module>
+    from api.middleware import JWTAuthMiddleware
+  File "/app/api/middleware.py", line 2, in <module>
+    from rest_framework_simplejwt.tokens import AccessToken
+  File "/app/.venv/lib/python3.13/site-packages/rest_framework_simplejwt/tokens.py", line 7, in <module>
+    from django.contrib.auth.models import AbstractBaseUser
+  File "/app/.venv/lib/python3.13/site-packages/django/contrib/auth/models.py", line 5, in <module>
+    from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
+  File "/app/.venv/lib/python3.13/site-packages/django/contrib/auth/base_user.py", line 43, in <module>
+    class AbstractBaseUser(models.Model):
+    ...<120 lines>...
+            )
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/base.py", line 131, in __new__
+    app_config = apps.get_containing_app_config(module)
+  File "/app/.venv/lib/python3.13/site-packages/django/apps/registry.py", line 260, in get_containing_app_config
+    self.check_apps_ready()
+  File "/app/.venv/lib/python3.13/site-packages/django/conf/__init__.py", line 75, in __getattr__
+    self._setup(name)
+    ~~~~~~~~~~~^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/conf/__init__.py", line 55, in _setup
+    raise ImproperlyConfigured(
+    ...<4 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Requested setting INSTALLED_APPS, but settings are not configured. You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings.
+  File "/app/.venv/lib/python3.13/site-packages/django/apps/registry.py", line 137, in check_apps_ready
+    settings.INSTALLED_APPS
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/daphne/cli.py", line 171, in entrypoint
+Traceback (most recent call last):
+    cls().run(sys.argv[1:])
+  File "/app/.venv/bin/daphne", line 7, in <module>
+    ~~~~~~~~~^^^^^^^^^^^^^^
+    sys.exit(CommandLineInterface.entrypoint())
+    application = self.load_asgi_app(args.application)
+  File "/app/.venv/lib/python3.13/site-packages/daphne/cli.py", line 239, in run
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/app/.venv/lib/python3.13/site-packages/daphne/cli.py", line 208, in load_asgi_app
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return import_by_path(asgi_app_path)
+  File "/app/.venv/lib/python3.13/site-packages/daphne/utils.py", line 17, in import_by_path
+    target = importlib.import_module(module_path)
+  File "/mise/installs/python/3.13.12/lib/python3.13/importlib/__init__.py", line 88, in import_module
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "/app/.venv/lib/python3.13/site-packages/django/apps/registry.py", line 260, in get_containing_app_config
+    self.check_apps_ready()
+    from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
+  File "/app/.venv/lib/python3.13/site-packages/django/contrib/auth/base_user.py", line 43, in <module>
+  File "/app/api/middleware.py", line 2, in <module>
+    class AbstractBaseUser(models.Model):
+    from rest_framework_simplejwt.tokens import AccessToken
+    ...<120 lines>...
+  File "/app/.venv/lib/python3.13/site-packages/rest_framework_simplejwt/tokens.py", line 7, in <module>
+            )
+    from django.contrib.auth.models import AbstractBaseUser
+  File "/app/.venv/lib/python3.13/site-packages/django/contrib/auth/models.py", line 5, in <module>
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/base.py", line 131, in __new__
+    app_config = apps.get_containing_app_config(module)
+  File "<frozen importlib._bootstrap_external>", line 1023, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/backend/asgi.py", line 4, in <module>
+    from api.middleware import JWTAuthMiddleware
+    ~~~~~~~~~~~~~~~~~~~~~^^
+    settings.INSTALLED_APPS
+  File "/app/.venv/lib/python3.13/site-packages/django/conf/__init__.py", line 75, in __getattr__
+    self._setup(name)
+    ~~~~~~~~~~~^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/conf/__init__.py", line 55, in _setup
+    raise ImproperlyConfigured(
+  File "/app/.venv/lib/python3.13/site-packages/django/apps/registry.py", line 137, in check_apps_ready
+    ...<4 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Requested setting INSTALLED_APPS, but settings are not configured. You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings.
+Traceback (most recent call last):
+  File "/app/.venv/bin/daphne", line 7, in <module>
+    sys.exit(CommandLineInterface.entrypoint())
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+    target = importlib.import_module(module_path)
+  File "/app/.venv/lib/python3.13/site-packages/daphne/cli.py", line 171, in entrypoint
+    cls().run(sys.argv[1:])
+  File "/mise/installs/python/3.13.12/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    ~~~~~~~~~^^^^^^^^^^^^^^
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "/app/.venv/lib/python3.13/site-packages/daphne/cli.py", line 239, in run
