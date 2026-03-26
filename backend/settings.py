@@ -53,6 +53,7 @@ ASGI_APPLICATION = "backend.asgi.application"
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware"
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -78,6 +79,7 @@ TEMPLATES = [
     },
 ]
 
+STATIC_ROOT = BASE_DIR / "staticfiles"
 WSGI_APPLICATION = "backend.wsgi.application"
 
 
@@ -125,7 +127,7 @@ STATIC_URL = "static/"
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {"hosts": [("127.0.0.1", 6379)]},
+        "CONFIG": {"hosts": [config("REDIS_URL")]},
     }
 }
 
